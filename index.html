@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/svg-pan-zoom@3.6.1/dist/svg-pan-zoom.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/StephanWagner/svgMap@v2.10.1/dist/svgMap.min.js"></script>
+<link href="https://cdn.jsdelivr.net/gh/StephanWagner/svgMap@v2.10.1/dist/svgMap.min.css" rel="stylesheet">
+<title>Page Title</title>
+</head>
+<body>
+
+<h1>This is a Heading</h1>
+<p>This is a paragraph.</p>
+<div id="svgMap"></div>
+  <script>
+    new svgMap({
+  targetElementID: 'svgMap',
+  data: {
+    data: {
+      gdp: {
+        name: 'GDP per capita',
+        format: '{0} USD',
+        thousandSeparator: ',',
+        thresholdMax: 50000,
+        thresholdMin: 1000
+      },
+      change: {
+        name: 'Change to year before',
+        format: '{0} %'
+      }
+    },
+    applyData: 'gdp',
+    values: {
+      AF: { gdp: 587, change: 4.73 },
+      AL: { gdp: 4583, change: 11.09 },
+      DZ: { gdp: 4293, change: 10.01 }
+      // ...
+    }
+  }
+});
+  </script>
+</body>
+</html>
